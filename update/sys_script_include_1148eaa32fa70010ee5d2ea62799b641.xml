@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_script_include">
+    <sys_script_include action="INSERT_OR_UPDATE">
+        <access>package_private</access>
+        <active>true</active>
+        <api_name>x_58872_needit.GetEmailAddressAJAX</api_name>
+        <caller_access/>
+        <client_callable>true</client_callable>
+        <description/>
+        <name>GetEmailAddressAJAX</name>
+        <script><![CDATA[var GetEmailAddressAJAX = Class.create();
+GetEmailAddressAJAX.prototype = Object.extendsObject(global.AbstractAjaxProcessor, {
+	
+	getEmail: function(){
+		var reqForSysId = this.getParameter('sysparm_userId');
+		
+		var grUser = new GlideRecord('sys_user');
+		if(grUser.get(reqForSysId))
+			return grUser.email + '';
+		else
+			return '';
+	},
+
+    type: 'GetEmailAddressAJAX'
+});]]></script>
+        <sys_class_name>sys_script_include</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2020-03-20 20:06:54</sys_created_on>
+        <sys_id>1148eaa32fa70010ee5d2ea62799b641</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>GetEmailAddressAJAX</sys_name>
+        <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
+        <sys_policy>read</sys_policy>
+        <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
+        <sys_update_name>sys_script_include_1148eaa32fa70010ee5d2ea62799b641</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2020-03-20 20:48:32</sys_updated_on>
+    </sys_script_include>
+</record_update>
